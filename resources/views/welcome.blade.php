@@ -58,7 +58,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="/" class="text-gray-700 hover:text-purple-600 font-medium">Home</a>
-                    <a href="#products" class="text-gray-700 hover:text-purple-600 font-medium">Products</a>
+                    <a href="#product" class="text-gray-700 hover:text-purple-600 font-medium">Products</a>
                     <a href="#categories" class="text-gray-700 hover:text-purple-600 font-medium">Categories</a>
                     <a href="#about" class="text-gray-700 hover:text-purple-600 font-medium">About</a>
                 </div>

@@ -13,13 +13,24 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->foreignId('order_id')->nullable()->constrained()->onDelete('set null');
+
+            $table->integer('rating');
+            $table->text('comment')->nullable();
+            $table->boolean('is_approved')->default(false);
+
             $table->timestamps();
+
+            //uniq user 1x review per order
+            $table->unique(['user_id', 'product_id', 'order_id']);
+
+            //index
+            $table->index(['product_id', 'is_approved']);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('reviews');
